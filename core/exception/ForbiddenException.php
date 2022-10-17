@@ -1,0 +1,9 @@
+<?php
+namespace oo\exception;
+use Exception;
+
+class ForbiddenException extends Exception{
+        protected $message='You\'t have permission to access this page';
+        protected $code=403;
+        
+}

@@ -1,0 +1,44 @@
+ <!-- <form method="post" action="">
+    <div class="mb-3">
+      <label for="input1" class="form-label">FirstName</label>
+      <input type="text" name="firstName" value="<?php echo $model->firstName; ?>"
+        class="form-control <?php echo $model->hasError('firstName') ? 'is-invalid' : ''; ?>" id="input1">
+      <div class="invalid-feedback">
+        <?php echo $model->getFirstError('firstName'); ?>
+      </div>
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="input1" class="form-label">LastName</label>
+      <input type="text" name="lastName" value="<?php echo $model->lastName; ?>"
+        class="form-control <?php echo $model->hasError('lastName') ? 'is-invalid' : ''; ?>" id="input1">
+      <div class="invalid-feedback">
+        <?php echo $model->getFirstError('lastName'); ?>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="input2" class="form-label">Email</label>
+      <input type="text" name="email" value="<?php echo $model->email; ?>"
+        class="form-control <?php echo $model->hasError('email') ? 'is-invalid' : ''; ?>" id="input12">
+      <div class="invalid-feedback">
+        <?php echo $model->getFirstError('email'); ?>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="input2" class="form-label">Password</label>
+      <input type="password" name="password" value="<?php echo $model->password; ?>"
+        class="form-control <?php echo $model->hasError('password') ? 'is-invalid' : ''; ?>" id="input12">
+      <div class="invalid-feedback">
+        <?php echo $model->getFirstError('password'); ?>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="input2" class="form-label">Confirm Password</label>
+      <input type="text" name="cnfrmPassword" value="<?php echo $model->cnfrmPassword; ?>"
+        class="form-control <?php echo $model->hasError('cnfrmPassword') ? 'is-invalid' : ''; ?>" id="input12">
+      <div class="invalid-feedback">
+        <?php echo $model->getFirstError('cnfrmPassword'); ?>
+      </div>
+    </div>
+    <button type="password" class="btn btn-primary">Submit</button>
+  </form> -->

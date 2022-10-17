@@ -1,0 +1,60 @@
+<?php
+namespace cont;
+use mdls\LoginForm;
+use mdls\User;
+use oo\Application;
+use oo\Controller;  
+use oo\Request;
+use oo\Response;
+use oo\middlewares\AuthMiddleware;
+
+class AuthController extends Controller{
+
+    public function __construct(){
+        $this->registerMiddleware(new AuthMiddleware(['profile']));
+    }
+
+    public function login(Request $request,Response $response){
+        $loginForm=new LoginForm();
+        if($request->isPost()){
+            $loginForm->loadData($request->getBody());
+            if($loginForm->validate() && $loginForm->login()){
+                $response->redirect('/');
+                return;
+
+            }
+        }
+        $this->setLayout('auth');
+        return $this->render('login',['model'=>$loginForm]);
+    }
+
+    public function register(Request $request){
+        
+        $user=new User();
+        if($request->isPost()){
+            $user->loadData($request->getBody());
+            
+            if($user->validate() && $user->save()){
+                // echo 'Success';
+                Application::$app->session->setFlash('success','Thanks for registering');
+                return Application::$app->response->redirect('/');
+            }
+            echo'<pre>';  
+            var_dump($user->errors);  
+            echo'</pre>';
+           return  $this->render('register',['model'=>$user]);
+        }
+        
+        $this->setLayout('auth');
+        return  $this->render('register',['model'=>$user]);
+    }
+    public function logout(Request $request,Response $response){
+        Application::$app->logout();
+          $response->redirect("/");
+         
+          return;
+    }
+    public function profile(){
+        return $this->render('profile');
+    }
+}

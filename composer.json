@@ -1,0 +1,22 @@
+{
+    "name": "phpmvc/myphp",
+    "description": "the new framework",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Myphp\\": "/",
+            "cont\\":"controllers/", 
+            "mdls\\": "models/",
+            "oo\\": "core/",
+            "datas\\": "datas/",
+            "Dotenv\\":"/../vendor/vlucas/phpdotenv/src/"
+
+
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
